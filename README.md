@@ -8,14 +8,13 @@ SAKURAI_TK 的非官方 Top Gun 同人作品總入口。**獨立新網站，不�
 |---|---|---|
 | Song Maketh Wingman | Notion 「我的作品」的 `作品識別碼=song_maketh_wingman` | 獨立短篇目錄、CP 篩選、18+ 提醒、章節閱讀 |
 | 隨寫系列 | `作品識別碼=top_gun_random_writings` | `故事篇章` 依 IceMav合集／RooHang合集／IceMav和RooHang合集 三組獨立顯示 |
-| 點文／活動系列 | 尚未啟用 | 預留入口，不展示草稿 |
 | Where Wake Turbulence Ends | 既有網站 | 專屬卡片、外連 `https://turbulence-eim.pages.dev/` |
-| 時空交錯的旅行 | 獨立作品 | 專屬卡片；**公開網址尚未提供**，先顯示待設定 |
+| 時空交錯的旅行 | 獨立作品 | 專屬卡片；直接外連 `https://globetrotting.pages.dev/` |
 
 ### 視覺
 
 D 方案：夕陽航空電影感首頁 + 深海軍藍航空檔案卡片 + 暖白閱讀頁。
-目前的背景和卡片圖片是從本專案的 **AI 生成概念圖**裁切，不是從第三方付費圖庫購買，也**不是官方電影劇照**。請勿對外宣稱與《Top Gun》官方有關。個別文字、商標和人物肖像仍需遵守權利限制。
+目前的背景和卡片圖片是從**AI 生成的航空風景概念圖**裁切（不含電影角色與標誌），不是從第三方付費圖庫購買，也**不是官方電影劇照**。請勿對外宣稱與《Top Gun》官方有關。個別文字、商標和人物肖像仍需遵守權利限制。
 
 ## 預覽
 
@@ -66,7 +65,7 @@ python3 -m http.server 8000
 ```js
 window.TOP_GUN_CONFIG = {
   turbulenceUrl: 'https://turbulence-eim.pages.dev/',
-  globetrottingUrl: '', // 確認《時空交錯的旅行》公開網址後貼上
+  globetrottingUrl: 'https://globetrotting.pages.dev/',
   author: 'SAKURAI_TK'
 };
 ```
@@ -102,6 +101,6 @@ README.md                           使用手冊
 - [ ] 〈Being normal is a miracle〉同頁五章跳轉正常
 - [ ] 有 YouTube 連結的文章顯示配樂入口
 - [ ] Where Wake Turbulence Ends 連結正確
-- [ ] 《時空交錯的旅行》取得網址後再填入，不捏造網址
+- [ ] 《時空交錯的旅行》卡片可外連；目的站網址須另行驗證
 - [ ] iPhone / desktop 上版型正常
 - [ ] 清楚標示非官方二次創作
