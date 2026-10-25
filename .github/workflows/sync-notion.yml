@@ -1,0 +1,52 @@
+
+name: Sync Top Gun Notion Articles
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 台灣時間每日 10:00（UTC 02:00）
+    - cron: '0 2 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: top-gun-notion-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Export public Top Gun Notion articles
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: python scripts/sync_notion.py
+
+      - name: Commit safe public output
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add -A -- data/chapters.json
+
+          if [ -d assets/notion ]; then
+            git add -A -- assets/notion/
+          fi
+
+          if ! git diff --cached --quiet; then
+            git commit -m 'Sync public Top Gun stories from Notion'
+            git push
+          else
+            echo 'No changes to commit.'
+          fi
