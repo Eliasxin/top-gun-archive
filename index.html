@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1d2d">
+  <meta name="description" content="SAKURAI_TK 的 Top Gun 同人創作總入口：Song Maketh Wingman、隨寫系列、獨立長篇及點文活動。">
+  <title>TOP GUN · Stories Beyond the Sky | SAKURAI_TK</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/hero-cinema.webp" as="image">
+  <link rel="stylesheet" href="./styles.css?v=1">
+  <script defer src="./config.js"></script>
+  <script defer src="./app.js?v=1"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">跳至主要內容</a>
+  <header class="masthead" id="top">
+    <a href="#home" class="brand" aria-label="SAKURAI_TK Top Gun 首頁">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span><strong>SAKURAI_TK</strong><small>FANFICTION ARCHIVE</small></span>
+    </a>
+    <button class="mobile-menu" id="menuToggle" type="button" aria-label="開啟導覽選單" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav id="mainNav" class="main-nav" aria-label="主要導覽">
+      <a href="#home" data-nav="home">首頁</a>
+      <a href="#archive" data-nav="archive">作品檔案</a>
+      <a href="#series/song_maketh_wingman" data-nav="wingman">Song Maketh Wingman</a>
+      <a href="#series/top_gun_random_writings" data-nav="random">隨寫系列</a>
+      <a href="#about" data-nav="about">關於本站</a>
+    </nav>
+    <button class="header-search" id="globalSearchButton" type="button" aria-label="搜尋已公開故事" title="搜尋故事">⌕ <span>SEARCH</span></button>
+  </header>
+
+  <main id="content">
+    <section id="homeView" class="home-view" aria-label="首頁">
+      <section class="hero">
+        <div class="hero-photo" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content shell">
+          <div class="hero-eyebrow"><span class="line"></span> SAKURAI_TK <span class="dot">·</span> FANFICTION ARCHIVE</div>
+          <h1>TOP GUN</h1>
+          <p class="hero-subtitle">STORIES BEYOND THE SKY</p>
+          <p class="hero-zh">每一段航程，都有未曾說完的故事。</p>
+          <p class="hero-english">DIFFERENT RUNWAYS. SAME SKY.<br>STORIES THAT KEEP FLYING.</p>
+          <a href="#archive" class="main-cta">進入故事檔案 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-side left" aria-hidden="true">ARCHIVE / 001—005</div>
+        <div class="hero-side right" aria-hidden="true">THE SKY IS NEVER THE END.</div>
+        <div class="hero-bottom" aria-hidden="true"><span>FLIGHT LOG / 2026</span><span>↓ &nbsp; SCROLL TO ARCHIVE</span></div>
+      </section>
+
+      <section class="archive-section shell" id="archiveSection">
+        <div class="section-heading">
+          <div><p class="section-kicker"><span class="gold-square"></span> ARCHIVE / 飛行紀錄</p><h2>每一個故事，<em>都有自己的航線。</em></h2></div>
+          <span class="section-aside">05 COLLECTIONS · ONE SKY</span>
+        </div>
+        <div class="archive-grid" id="archiveGrid" aria-label="作品專區"></div>
+        <p class="archive-explainer">已公開文章會由 Notion 自動同步；草稿及未勾選「網站公開」的文章不會出現在讀者目錄。</p>
+      </section>
+
+      <section class="note-strip shell">
+        <span class="note-rule" aria-hidden="true"></span>
+        <p>「 有些故事未完，只是換了一片天空，繼續飛行。 」</p>
+        <span class="note-tail">SAME SKY. DIFFERENT STORIES.</span>
+      </section>
+
+      <section class="quick-links shell" aria-label="閱讀與介紹">
+        <a href="#series/song_maketh_wingman"><span>01 / SONGS</span><strong>在旋律裡相遇</strong><small>歌曲短篇 →</small></a>
+        <a href="#series/top_gun_random_writings"><span>02 / COLLECTIONS</span><strong>那些沒說完的日常</strong><small>三組獨立合集 →</small></a>
+        <a href="#about"><span>03 / ABOUT</span><strong>飛行員背後的故事</strong><small>關於創作 →</small></a>
+      </section>
+    </section>
+
+    <section id="subView" class="subview shell" hidden aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-landscape" aria-hidden="true"></div>
+    <div class="shell footer-inner">
+      <div><p class="footer-brand">SAKURAI_TK <span>·</span> FANFICTION ARCHIVE</p><p>DIFFERENT SKIES. SAME HEARTS.<br>STORIES NEVER LAND.</p></div>
+      <div><a href="#archive">作品檔案</a><a href="#about">關於本站</a><a href="#home">回到首頁 ↑</a></div>
+    </div>
+    <p class="disclaimer shell">非官方二次創作網站，與《Top Gun》電影製作及權利方無關。文中人物及原著相關權利屬各自權利人所有。網站視覺使用原創生成概念圖的裁切素材，並非官方劇照。</p>
+  </footer>
+
+  <dialog id="ageDialog" class="age-dialog" aria-labelledby="ageTitle" aria-describedby="ageDescription">
+    <div class="age-box"><p class="eyebrow">CONTENT NOTICE / 年齡提醒</p><h2 id="ageTitle">18+ 成人分級內容</h2><p id="ageDescription">這篇文章標示為 18+。請確認您已達所在地的法定成年年齡，並自行評估是否適合閱讀。</p><div class="age-actions"><button type="button" class="button-ghost" id="ageCancel">返回目錄</button><button type="button" class="button-primary" id="ageContinue">我已成年，繼續閱讀</button></div></div>
+  </dialog>
+
+  <noscript><p class="no-script">此網站需要 JavaScript 顯示 Notion 公開故事目錄。請開啟 JavaScript。</p></noscript>
+</body>
+</html>
