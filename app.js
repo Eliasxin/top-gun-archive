@@ -29,7 +29,18 @@
   const cpLabel=ch=>(Array.isArray(ch.cp)?ch.cp:[]).join('、') || '未標示 CP';
   const isAdult=ch=>/18\+|r18|成人|限制|explicit/i.test(ch.ageRating||'');
   const escapeHtml=value=>String(value==null?'':value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const safeHttp=url=>{try{const u=new URL(url,location.href);return ['https:','http:'].includes(u.protocol)?u.href:null;}catch(_){return null;}};
+  // Only explicit, absolute HTTP(S) URLs count as links. In particular,
+  // new URL(null, location.href) becomes /null: the old check accidentally
+  // turned every normal Notion text run into a clickable link.
+  const safeHttp=url=>{
+    if(typeof url!=='string')return null;
+    const value=url.trim();
+    if(!/^https?:\/\//i.test(value))return null;
+    try{
+      const parsed=new URL(value);
+      return ['https:','http:'].includes(parsed.protocol)?parsed.href:null;
+    }catch(_){return null;}
+  };
   const workUrl=work=>safeHttp(EXTERNAL_URLS[work.id]);
   const storiesFor=id=>state.chapters.filter(ch=>ch.work===id).sort((a,b)=>(a.chapterNumber??999999)-(b.chapterNumber??999999)||a.title.localeCompare(b.title));
   const pageTitle=value=>{document.title=value+' | TOP GUN · SAKURAI_TK';};
